@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="controllers.LoginController" 
+            prefHeight="650.0" prefWidth="800.0" 
+            style="-fx-background-color: linear-gradient(to bottom, #667eea 0%, #764ba2 100%);">
+    
+    <top>
+        <!-- Header Title with Background -->
+        <VBox style="-fx-background-color: linear-gradient(to right, #667eea 0%, #764ba2 100%); -fx-padding: 30;">
+            <HBox alignment="CENTER" spacing="30.0">
+                <!-- Title Section -->
+                <VBox alignment="CENTER" spacing="8.0">
+                    <Label text="BABASAHEB BHIMRAO AMBEDKAR UNIVERSITY" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                    <Label text="LUCKNOW" style="-fx-font-size: 12; -fx-text-fill: #e0e0e0;"/>
+                    <Label text="CENTRAL LIBRARY MANAGEMENT SYSTEM" style="-fx-font-size: 16; -fx-font-weight: bold; -fx-text-fill: #00d4ff;"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <VBox alignment="CENTER" spacing="25.0" style="-fx-background-color: transparent;">
+            <padding>
+                <Insets top="40" right="50" bottom="40" left="50"/>
+            </padding>
+            
+            <!-- Login Form Card -->
+            <VBox style="-fx-background-color: white; -fx-background-radius: 15; -fx-padding: 35;" spacing="20.0">
+                
+                <!-- Form Header -->
+                <Label text="LOGIN TO YOUR ACCOUNT" textAlignment="CENTER" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #667eea;"/>
+                <Label text="🔐 Enter your credentials to access the library system" textAlignment="CENTER" style="-fx-font-size: 12; -fx-text-fill: #666666;"/>
+                <Separator prefWidth="200.0"/>
+                
+                <!-- Role Selection -->
+                <HBox alignment="CENTER" spacing="30.0">
+                    <RadioButton fx:id="rbLibrarian" text="👨‍💼 Librarian" selected="true" style="-fx-font-size: 13;">
+                        <toggleGroup>
+                            <ToggleGroup fx:id="roleGroup"/>
+                        </toggleGroup>
+                    </RadioButton>
+                    <RadioButton fx:id="rbStudent" text="👨‍🎓 Student" toggleGroup="$roleGroup" style="-fx-font-size: 13;"/>
+                </HBox>
+                
+                <!-- ID Field -->
+                <VBox spacing="8.0">
+                    <Label text="User ID:" style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <TextField fx:id="txtUserId" promptText="Enter your ID" 
+                              style="-fx-font-size: 14; -fx-padding: 12; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox spacing="8.0">
+                    <Label text="Password:" style="-fx-font-weight: bold; -fx-text-fill: #333333;"/>
+                    <PasswordField fx:id="txtPassword" promptText="Enter your password" 
+                                  style="-fx-font-size: 14; -fx-padding: 12; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                </VBox>
+                
+                <!-- Login Button -->
+                <Button fx:id="btnLogin" text="🔓 LOGIN" onAction="#handleLogin" 
+                        prefWidth="300.0" prefHeight="50.0"
+                        style="-fx-background-color: #667eea; -fx-text-fill: white; -fx-font-size: 15; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;">
+                </Button>
+                
+                <!-- Status Label -->
+                <Label fx:id="lblStatus" textAlignment="CENTER" wrapText="true" prefWidth="350.0" style="-fx-font-size: 12; -fx-padding: 10;"/>
+                
+            </VBox>
+            
+        </VBox>
+    </center>
+    
+    <padding>
+        <Insets top="0" right="0" bottom="0" left="0"/>
+    </padding>
+    
+</BorderPane>
