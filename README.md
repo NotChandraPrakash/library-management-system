@@ -452,8 +452,8 @@ copies or substantial portions of the Software.
 ## 👨‍💼 Author
 
 **Chandra Prakash**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@NotChandraPrakash](https://github.com/NotChandraPrakash)
+- Email: prochandra2004@gmail.com
 
 ---
 
