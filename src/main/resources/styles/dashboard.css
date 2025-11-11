@@ -1,0 +1,41 @@
+/* Minimal dashboard stylesheet for Digital Library Management System */
+
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 12px;
+}
+
+/* Header styles */
+.hbox {
+    -fx-padding: 10 20;
+}
+
+.label {
+    -fx-text-fill: #333333;
+}
+
+/* TableView styling */
+.table-view {
+    -fx-border-color: transparent;
+}
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f3f4f6);
+}
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #e6eef8;
+}
+
+/* Buttons */
+.button {
+    -fx-background-radius: 4;
+}
+
+/* Tabs */
+.tab-pane .tab-header-area {
+    -fx-background-color: transparent;
+}
+
+/* Text area */
+.text-area {
+    -fx-font-family: "Consolas", monospace;
+}

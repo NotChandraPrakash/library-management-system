@@ -58,12 +58,21 @@ public class StudentDashboardController {
         colCopiesAvailable.setCellValueFactory(new PropertyValueFactory<>("copies"));
         
         loadAvailableBooks();
-        loadMyIssuedBooks();
+        // Do NOT call loadMyIssuedBooks() here because initialize() is invoked
+        // during FXMLLoader.load(), which happens before the caller (LoginController)
+        // has a chance to call setStudent(). Calling loadMyIssuedBooks() here
+        // can cause a NullPointerException when `student` is null.
+        // If the student was already set earlier (unlikely), call it safely.
+        if (this.student != null) {
+            loadMyIssuedBooks();
+        }
     }
     
     public void setStudent(Student student) {
         this.student = student;
         lblStudentInfo.setText("Logged in as: " + student.getName());
+        // Now that the student is set, safely load issued books for this student
+        loadMyIssuedBooks();
     }
     
     @FXML
