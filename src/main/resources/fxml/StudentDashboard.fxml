@@ -19,7 +19,8 @@
         <!-- User Info and Logout -->
         <VBox spacing="10" alignment="CENTER_RIGHT">
             <Label fx:id="lblStudentInfo" text="Logged in as: Student" style="-fx-text-fill: white; -fx-font-size: 12;"/>
-            <Button fx:id="btnLogout" text="🚪 Logout" style="-fx-font-size: 12; -fx-padding: 8 20; -fx-background-color: #ff6b6b; -fx-text-fill: white;"/>
+            <!-- Wire logout button to controller -->
+            <Button fx:id="btnLogout" text="🚪 Logout" onAction="#handleLogout" style="-fx-font-size: 12; -fx-padding: 8 20; -fx-background-color: #ff6b6b; -fx-text-fill: white;"/>
         </VBox>
     </HBox>
 
